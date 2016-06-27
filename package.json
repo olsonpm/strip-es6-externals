@@ -1,0 +1,22 @@
+{
+  "name": "strip-es6-externals",
+  "version": "0.1.0",
+  "description": "Strips an appending /es6 during requires intended for babel builds",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olsonpm/strip-es6-externals.git"
+  },
+  "author": "phil olson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olsonpm/strip-es6-externals/issues"
+  },
+  "homepage": "https://github.com/olsonpm/strip-es6-externals#readme",
+  "dependencies": {
+    "lodash.endswith": "^4.1.0"
+  }
+}
