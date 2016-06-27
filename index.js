@@ -2,15 +2,16 @@
 
 var endsWith = require('lodash.endswith')  ;
 
-module.exports = function(ctx, req, cb) {
-  this.cacheable && this.cacheable();
-  console.log('this.resourcePath: ' + this.resourcePath);
+module.exports = function(entry) {
+  return function(ctx, req, cb) {
+    if (req === entry) {
+      req = false;
+    } else if (endsWith(req, '/es6')) {
+      req = req.slice(0, -4) + '/es5';
+    } else {
+      req = undefined;
+    }
 
-  if (endsWith(req, '/es6')) {
-    req = req.slice(0, -4);
-  }
-
-  cb(null, req);
+    cb(null, req);
+  };
 };
-
-module.exports.raw = true;
